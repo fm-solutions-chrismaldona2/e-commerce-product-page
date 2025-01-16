@@ -1,9 +1,18 @@
-import "@src/styles/reset.css";
-import "@src/styles/fonts.css";
-import "@src/styles/global.css";
+import "@assets/styles/reset.css";
+import "@assets/styles/fonts.css";
+import "@assets/styles/global.css";
+import { Routes, Route } from "react-router";
+import MainLayout from "@shared/layouts/MainLayout/MainLayout";
+import ProductDetails from "./pages/ProductDetails/ProductDetails";
 
-function App() {
-  return <></>;
-}
+const App = () => {
+  return (
+    <MainLayout>
+      <Routes>
+        <Route path="/" element={<ProductDetails />} />
+      </Routes>
+    </MainLayout>
+  );
+};
 
 export default App;

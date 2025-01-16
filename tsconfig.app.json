@@ -23,7 +23,7 @@
     "noUncheckedSideEffectImports": true,
 
     "paths": {
-      "@src/*": ["./src/*"],
+      "@/*": ["./src/*"],
       "@shared/*": ["./src/shared/*"],
       "@pages/*": ["./src/pages/*"],
       "@assets/*": ["./src/assets/*"],
