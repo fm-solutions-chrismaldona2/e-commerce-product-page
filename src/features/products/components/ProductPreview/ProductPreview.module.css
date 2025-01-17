@@ -1,0 +1,63 @@
+.images__wrapper {
+  --gap: min(2rem, 5vw);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.images__wrapper img {
+  max-height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.image__selected {
+  cursor: pointer;
+  border-radius: 1rem;
+}
+
+.images__carrousel {
+  max-width: 100%;
+  display: flex;
+  gap: var(--gap);
+}
+
+.image--carrousel {
+  flex-grow: 1;
+  min-width: 3.25rem;
+  height: auto;
+  transition: opacity 0.4s ease, box-shadow 0.35s ease;
+}
+
+.image--carrousel:not(.image--carrousel--selected):hover {
+  opacity: 0.6;
+}
+
+.image--carrousel--selected {
+  opacity: 0.25;
+}
+
+.image__wrapper--carrousel {
+  background-color: var(--clr-white, #fff);
+  cursor: pointer;
+  border-radius: 0.5em;
+  overflow: clip;
+}
+
+.image__wrapper--carrousel:has(.image--carrousel--selected) {
+  box-shadow: 0 0 0 2px var(--clr-orange, #ff7d1a);
+}
+
+@media screen and (max-width: 768px) {
+  .images__carrousel {
+    display: none;
+  }
+
+  .images__wrapper {
+    max-height: 23rem;
+  }
+
+  .image__selected {
+    border-radius: 0;
+  }
+}

@@ -1,0 +1,29 @@
+.cartButton {
+  position: relative;
+  background: none;
+  border: none;
+  flex-shrink: 0;
+  padding: 0.5em;
+  border-radius: 0.25rem;
+  transition: scale 0.35s ease;
+  cursor: pointer;
+}
+
+.cartButton:hover {
+  scale: 1.1;
+}
+
+.cartButton__count {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: var(--clr-orange, #ff7d1a);
+  color: var(--clr-white, #fff);
+  font-size: 0.65rem;
+  padding: 0.1em 0.75em;
+  border-radius: 1em;
+}
+
+.cartButton:active {
+  scale: 0.9;
+}

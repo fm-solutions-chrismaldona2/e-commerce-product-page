@@ -4,6 +4,6 @@ export interface SvgProps extends SVGProps<SVGSVGElement> {
   className?: string;
 }
 
-export interface LayoutComponent {
+export interface LayoutComponentProps {
   children?: ReactNode;
 }

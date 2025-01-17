@@ -1,0 +1,31 @@
+.profileButton {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: scale 0.35s ease;
+}
+
+.profileButton:active {
+  scale: 0.9;
+}
+
+.profileButton {
+  min-width: 2rem;
+  border-radius: 50%;
+  overflow: clip;
+  transition: box-shadow 0.5s ease, scale 0.35s ease;
+}
+
+.profileButton:hover {
+  box-shadow: 0 0 1px 2px var(--clr-orange, #ff7d1a);
+}
+
+.profileButton__image {
+  width: auto;
+  min-height: 1rem;
+  max-height: 3rem;
+  height: 8vw;
+  object-fit: cover;
+  object-position: center;
+}

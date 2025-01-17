@@ -1,16 +1,16 @@
 :root {
   /* Primary */
-  --clr-orange: #ff7d1a;
-  --clr-pale-orange: hsl(25, 100%, 94%);
+  --clr-orange: rgb(255, 125, 26);
+  --clr-pale-orange: #ffede0;
 
   /* Neutral */
-  --clr-very-dark-blue: hsl(220, 13%, 13%);
-  --clr-dark-grayish-blue: hsl(219, 9%, 45%);
-  --clr-grayish-blue: hsl(220, 14%, 75%);
-  --clr-light-grayish-blue: hsl(230, 60%, 98%);
+  --clr-very-dark-blue: rgb(29, 32, 37);
+  --clr-dark-grayish-blue: #747c89;
+  --clr-grayish-blue: #b6bcc8;
+  --clr-light-grayish-blue: #f7f8fd;
 
-  --clr-white: hsl(0, 0%, 100%);
-  --clr-black: hsl(0, 0%, 0%);
+  --clr-white: #ffffff;
+  --clr-black: #000000;
 }
 
 html {
@@ -30,4 +30,9 @@ body {
 
 *:focus-visible {
   box-shadow: 0 0 0 1.5px var(--clr-orange, #ff7d1a);
+}
+
+::selection {
+  background-color: var(--clr-orange, #ff7d1a);
+  color: var(--clr-white, #fff);
 }

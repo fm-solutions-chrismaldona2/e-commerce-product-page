@@ -1,8 +1,8 @@
 import styles from "./MainLayout.module.css";
-import { LayoutComponent } from "@/shared/types";
+import { LayoutComponentProps } from "@/shared/types";
 import NavBar from "@/shared/components/NavBar/NavBar";
 
-const MainLayout = ({ children }: LayoutComponent) => {
+const MainLayout = ({ children }: LayoutComponentProps) => {
   return (
     <div className={styles.layout}>
       <NavBar />

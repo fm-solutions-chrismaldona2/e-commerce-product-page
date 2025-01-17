@@ -1,0 +1,45 @@
+.menu {
+  width: 70%;
+  background: var(--clr-white);
+  padding-block: max(5vw, 1.5rem);
+  padding-inline: max(5vw, 2rem);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.menu__linkList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu__link {
+  display: block;
+  padding-block: 1.15rem;
+  text-decoration: none;
+  line-height: 1;
+  font-size: 1.5rem;
+  color: var(--clr-black, #000);
+  font-weight: 700;
+  transition: opacity 0.45s ease;
+}
+
+.menu__link:hover {
+  opacity: 0.5;
+}
+
+.menuButton {
+  width: fit-content;
+  background: none;
+  outline: none;
+  border: none;
+  padding: 0.35rem;
+  cursor: pointer;
+}
+
+.menuButton__icon {
+  height: 1.25rem;
+  width: auto;
+}
