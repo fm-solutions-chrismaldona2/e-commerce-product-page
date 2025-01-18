@@ -1,0 +1,40 @@
+.picker {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 0.75rem 0.5rem;
+  background-color: #f7f8fd;
+  border-radius: 0.6rem;
+}
+
+.picker__button {
+  background: none;
+  border: none;
+  outline: none;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0.6rem;
+  transition: scale 0.2s ease-in-out, opacity 0.35s ease;
+}
+
+.picker__button:hover {
+  opacity: 0.5;
+}
+
+.picker__button:active {
+  scale: 0.8;
+}
+
+.picker__buttonIcon {
+  flex-shrink: 0;
+  min-width: 0.8rem;
+}
+
+.picker__quantity {
+  font-size: 1rem;
+  font-weight: 700;
+}

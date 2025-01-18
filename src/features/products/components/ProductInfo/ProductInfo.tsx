@@ -1,15 +1,15 @@
-import { ProductInfoProps } from "@features/products/types";
+import { Product } from "@features/products/types";
 import styles from "./ProductInfo.module.css";
 import { calcDiscountPrice } from "@shared/utils/calcDiscountPrice";
 import { formatPriceToString } from "@shared/utils/formatPriceToString";
+import ProductPurchaseControls from "@features/cart/components/ProductPurchaseControls/ProductPurchaseControls";
 
-const ProductInfo = ({
-  name,
-  description,
-  brand,
-  price,
-  discountPercentage,
-}: ProductInfoProps) => {
+interface ProductInfoProps {
+  product: Product;
+}
+
+const ProductInfo = ({ product }: ProductInfoProps) => {
+  const { brand, name, description, price, discountPercentage } = product;
   return (
     <aside className={styles.product__info}>
       <span className={styles.product__brand}>{brand}</span>
@@ -30,6 +30,7 @@ const ProductInfo = ({
           {formatPriceToString(price)}
         </span>
       </div>
+      <ProductPurchaseControls product={product} />
     </aside>
   );
 };

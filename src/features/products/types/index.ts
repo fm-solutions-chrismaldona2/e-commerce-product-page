@@ -6,17 +6,16 @@ export type Product = {
   price: number;
   discountPercentage?: number;
   images: ProductImages[];
+  thumbnail?: ProductImages;
 };
 
 interface ProductImages {
-  id: number;
   src: string;
+  thumbnailSrc?: string;
 }
 
-export type ProductInfoProps = Omit<Product, "images">;
-
 export type ProductPreviewProps = {
-  name: string;
+  name?: string;
   images: ProductImages[];
 };
 

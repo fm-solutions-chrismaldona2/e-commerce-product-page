@@ -1,4 +1,4 @@
-import { ReactNode, SVGProps } from "react";
+import { ButtonHTMLAttributes, ReactNode, SVGProps } from "react";
 
 export interface SvgProps extends SVGProps<SVGSVGElement> {
   className?: string;
@@ -6,4 +6,10 @@ export interface SvgProps extends SVGProps<SVGSVGElement> {
 
 export interface LayoutComponentProps {
   children?: ReactNode;
+}
+
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  className?: string;
+  children?: ReactNode;
+  onClick: () => void;
 }

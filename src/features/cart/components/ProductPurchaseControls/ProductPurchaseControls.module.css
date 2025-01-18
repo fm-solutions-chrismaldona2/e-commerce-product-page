@@ -1,0 +1,24 @@
+.controls {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+}
+
+.controls__picker {
+  flex-basis: 23%;
+  flex-grow: 1;
+}
+
+.controls__submit {
+  flex-grow: 2;
+}
+
+.controls__submit > * {
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .controls {
+    flex-direction: column;
+  }
+}

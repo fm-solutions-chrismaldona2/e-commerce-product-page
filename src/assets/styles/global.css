@@ -1,10 +1,10 @@
 :root {
   /* Primary */
-  --clr-orange: rgb(255, 125, 26);
+  --clr-orange: #ff7d1a;
   --clr-pale-orange: #ffede0;
 
   /* Neutral */
-  --clr-very-dark-blue: rgb(29, 32, 37);
+  --clr-very-dark-blue: #1d2025;
   --clr-dark-grayish-blue: #747c89;
   --clr-grayish-blue: #b6bcc8;
   --clr-light-grayish-blue: #f7f8fd;

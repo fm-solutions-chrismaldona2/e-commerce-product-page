@@ -3,14 +3,32 @@ import { useState } from "react";
 import { ProductPreviewProps } from "@features/products/types";
 import ProductPreviewModal from "../ProductPreviewModal/ProductPreviewModal";
 import { AnimatePresence } from "motion/react";
+import { useSliderKeys } from "@features/products/hooks/useSliderKeys";
 
-const ProductPreview = ({ name, images }: ProductPreviewProps) => {
+const ProductPreview = ({ name = "Product", images }: ProductPreviewProps) => {
   const [currentImage, setCurrentImage] = useState<number>(0);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
   const toggleModal = () => {
     setIsModalOpen((prev) => !prev);
   };
+
+  const nextImage = () => {
+    setCurrentImage((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  const previousImage = () => {
+    setCurrentImage((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+
+  useSliderKeys({
+    onLeft: previousImage,
+    onRight: nextImage,
+    onEnter: toggleModal,
+    isActive: !isModalOpen,
+  });
 
   return (
     <>
@@ -38,18 +56,18 @@ const ProductPreview = ({ name, images }: ProductPreviewProps) => {
         />
 
         <div className={styles.images__carrousel}>
-          {images.map(({ id, src }, index) => {
+          {images.map(({ src, thumbnailSrc }, index) => {
             return (
               <div
                 className={styles["image__wrapper--carrousel"]}
-                key={id}
+                key={index}
                 tabIndex={0}
                 onClick={() => setCurrentImage(index)}
                 role="button"
                 aria-label="Change preview image"
               >
                 <img
-                  src={src}
+                  src={thumbnailSrc || src}
                   alt={`${name} Preview #${index}`}
                   className={`${styles["image--carrousel"]} ${
                     currentImage === index &&

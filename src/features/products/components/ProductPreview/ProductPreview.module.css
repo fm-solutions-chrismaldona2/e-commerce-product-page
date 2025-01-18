@@ -18,12 +18,12 @@
 
 .images__carrousel {
   max-width: 100%;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--gap);
 }
 
 .image--carrousel {
-  flex-grow: 1;
   min-width: 3.25rem;
   height: auto;
   transition: opacity 0.4s ease, box-shadow 0.35s ease;

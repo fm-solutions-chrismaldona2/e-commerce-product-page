@@ -1,0 +1,55 @@
+.button {
+  position: relative;
+  isolation: isolate;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+  gap: 0.9em;
+  border-radius: 0.6rem;
+  border: none;
+  outline: none;
+  background: none;
+  overflow: clip;
+  cursor: pointer;
+  transition: scale 0.35s ease;
+}
+
+.button:active {
+  scale: 0.96;
+}
+
+.button::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-color: var(--clr-orange, #ff7d1a);
+  transition: opacity 0.4s ease;
+}
+
+.button:hover.button::after {
+  opacity: 0.6;
+}
+
+.button__icon {
+  flex-shrink: 0;
+  width: 1.05rem;
+}
+
+.button__icon path {
+  fill: var(--clr-very-dark-blue, #1d2025);
+}
+
+.button__text {
+  color: var(--clr-very-dark-blue, #1d2025);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 768px) {
+  .button {
+    box-shadow: 0 1rem 2rem -0.9rem var(--clr-orange);
+  }
+}

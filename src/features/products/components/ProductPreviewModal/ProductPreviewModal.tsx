@@ -1,27 +1,37 @@
 import styles from "./ProductPreviewModal.module.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { ProductPreviewModalProps } from "@features/products/types";
 import { motion, Variants } from "motion/react";
 import { CloseIcon } from "@/shared/components/SvgIcons/SvgIcons";
 import Backdrop from "@shared/components/Backdrop/Backdrop";
+import { useSliderKeys } from "@features/products/hooks/useSliderKeys";
+import { useModalkeys } from "@/shared/hooks/useModalKeys";
 
 const ProductPreviewModal = ({
-  name,
+  name = "Product",
   images,
   currentImageIndex = 0,
   onClose,
 }: ProductPreviewModalProps) => {
   const [currentImage, setCurrentImage] = useState<number>(currentImageIndex);
 
-  useEffect(() => {
-    const closeOnEscapePressed = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        onClose();
-      }
-    };
-    window.addEventListener("keydown", closeOnEscapePressed);
-    return () => window.removeEventListener("keydown", closeOnEscapePressed);
-  }, [onClose]);
+  const nextImage = () => {
+    setCurrentImage((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  const previousImage = () => {
+    setCurrentImage((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+
+  useSliderKeys({
+    onLeft: previousImage,
+    onRight: nextImage,
+    isActive: true,
+  });
+
+  useModalkeys({ onClose: onClose });
 
   return (
     <Backdrop>
@@ -50,18 +60,18 @@ const ProductPreviewModal = ({
         />
 
         <div className={styles.images__carrousel}>
-          {images.map(({ id, src }, index) => {
+          {images.map(({ src, thumbnailSrc }, index) => {
             return (
               <div
                 className={styles["image__wrapper--carrousel"]}
-                key={id}
+                key={index}
                 tabIndex={0}
                 onClick={() => setCurrentImage(index)}
                 role="button"
                 aria-label="Change preview image"
               >
                 <img
-                  src={src}
+                  src={thumbnailSrc || src}
                   alt={`${name} Preview #${index}`}
                   className={`${styles["image--carrousel"]} ${
                     currentImage === index &&

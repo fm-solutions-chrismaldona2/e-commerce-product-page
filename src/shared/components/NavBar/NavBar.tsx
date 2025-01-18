@@ -3,7 +3,7 @@ import Logo from "@shared/components/Logo/Logo";
 import { Link } from "react-router";
 import { navLinks } from "@shared/constants/navLinks";
 import { ToggleMobileMenu } from "./components/ToggleMobileMenu/ToggleMobileMenu";
-import { CartButton } from "./components/CartButton/CartButton";
+import { CartButton } from "@features/cart/components/CartButton/CartButton";
 import { ProfileAvatar } from "./components/ProfileAvatar/ProfileAvatar";
 
 const NavBar = () => {

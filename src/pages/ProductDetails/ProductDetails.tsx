@@ -4,11 +4,11 @@ import ProductPreview from "@features/products/components/ProductPreview/Product
 import { products } from "@features/products/mocks/product";
 
 const ProductDetails = () => {
-  const [product] = products;
+  const [productData] = products;
   return (
     <ProductDetailsLayout>
-      <ProductPreview name={product.name} images={product.images} />
-      <ProductInfo {...product} />
+      <ProductPreview name={productData.name} images={productData.images} />
+      <ProductInfo product={productData} />
     </ProductDetailsLayout>
   );
 };
