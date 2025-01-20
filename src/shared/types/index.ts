@@ -10,6 +10,6 @@ export interface LayoutComponentProps {
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
-  children?: ReactNode;
+  children: ReactNode;
   onClick: () => void;
 }

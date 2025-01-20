@@ -10,8 +10,8 @@ export type Product = {
 };
 
 interface ProductImages {
-  src: string;
-  thumbnailSrc?: string;
+  url: string;
+  thumbnailUrl?: string;
 }
 
 export type ProductPreviewProps = {

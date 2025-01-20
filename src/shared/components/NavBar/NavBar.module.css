@@ -1,5 +1,7 @@
 .header__innerWrapper {
   position: relative;
+  isolation: isolate;
+
   margin-inline: auto;
   height: clamp(5rem, 15vw, 8rem);
   width: min(1080px, 90%);
@@ -11,6 +13,7 @@
 }
 
 .header__innerWrapper::after {
+  z-index: -1;
   content: "";
   position: absolute;
   left: 0;

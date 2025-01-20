@@ -15,9 +15,9 @@
 
 .cartButton__count {
   position: absolute;
-  right: 0;
+  left: 50%;
   top: 0;
-  background-color: var(--clr-orange, #ff7d1a);
+  background-color: var(--clr-orange, #ff7d1b);
   color: var(--clr-white, #fff);
   font-size: 0.65rem;
   padding: 0.1em 0.75em;
@@ -26,4 +26,15 @@
 
 .cartButton:active {
   scale: 0.9;
+}
+
+.cart {
+  position: fixed;
+  top: 3rem;
+  left: 50%;
+  translate: -50% 0;
+  box-shadow: 0 1rem 1.75rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  overflow: clip;
+  width: min(380px, 90%);
 }

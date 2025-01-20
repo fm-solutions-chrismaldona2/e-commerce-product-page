@@ -13,6 +13,11 @@
   background: none;
   overflow: clip;
   cursor: pointer;
+
+  color: var(--clr-very-dark-blue, #1d2025);
+  font-weight: 700;
+  white-space: nowrap;
+
   transition: scale 0.35s ease;
 }
 
@@ -25,7 +30,7 @@
   position: absolute;
   z-index: -1;
   inset: 0;
-  background-color: var(--clr-orange, #ff7d1a);
+  background-color: var(--clr-orange, #ff7d1b);
   transition: opacity 0.4s ease;
 }
 
@@ -33,23 +38,11 @@
   opacity: 0.6;
 }
 
-.button__icon {
+.button svg {
   flex-shrink: 0;
   width: 1.05rem;
 }
 
-.button__icon path {
+.button svg path {
   fill: var(--clr-very-dark-blue, #1d2025);
-}
-
-.button__text {
-  color: var(--clr-very-dark-blue, #1d2025);
-  font-weight: 700;
-  white-space: nowrap;
-}
-
-@media screen and (max-width: 768px) {
-  .button {
-    box-shadow: 0 1rem 2rem -0.9rem var(--clr-orange);
-  }
 }

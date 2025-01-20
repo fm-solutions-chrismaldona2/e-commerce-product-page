@@ -4,6 +4,7 @@ import { ProductPreviewProps } from "@features/products/types";
 import ProductPreviewModal from "../ProductPreviewModal/ProductPreviewModal";
 import { AnimatePresence } from "motion/react";
 import { useSliderKeys } from "@features/products/hooks/useSliderKeys";
+import defaultThumbnail from "@assets/images/products/default_product_thumbnail.png";
 
 const ProductPreview = ({ name = "Product", images }: ProductPreviewProps) => {
   const [currentImage, setCurrentImage] = useState<number>(0);
@@ -45,7 +46,7 @@ const ProductPreview = ({ name = "Product", images }: ProductPreviewProps) => {
 
       <div className={styles.images__wrapper}>
         <img
-          src={images[currentImage].src}
+          src={images[currentImage].url}
           alt={`${name} Preview`}
           className={styles.image__selected}
           width={494}
@@ -56,7 +57,7 @@ const ProductPreview = ({ name = "Product", images }: ProductPreviewProps) => {
         />
 
         <div className={styles.images__carrousel}>
-          {images.map(({ src, thumbnailSrc }, index) => {
+          {images.map(({ url, thumbnailUrl }, index) => {
             return (
               <div
                 className={styles["image__wrapper--carrousel"]}
@@ -67,7 +68,7 @@ const ProductPreview = ({ name = "Product", images }: ProductPreviewProps) => {
                 aria-label="Change preview image"
               >
                 <img
-                  src={thumbnailSrc || src}
+                  src={thumbnailUrl || url || defaultThumbnail}
                   alt={`${name} Preview #${index}`}
                   className={`${styles["image--carrousel"]} ${
                     currentImage === index &&

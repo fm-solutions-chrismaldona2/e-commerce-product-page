@@ -13,12 +13,16 @@
   flex-grow: 2;
 }
 
-.controls__submit > * {
+.controls__submit > button {
   width: 100%;
 }
 
 @media screen and (max-width: 768px) {
   .controls {
     flex-direction: column;
+  }
+
+  .controls__submit > button {
+    box-shadow: 0 1rem 2rem -0.9rem var(--clr-orange);
   }
 }

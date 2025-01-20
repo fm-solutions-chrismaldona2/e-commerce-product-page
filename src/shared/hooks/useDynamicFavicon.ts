@@ -8,9 +8,7 @@ export const useDynamicFavicon = () => {
         document.createElement("link");
       faviconLink.rel = "icon";
       faviconLink.href =
-        theme === "dark"
-          ? "/public/favicon-dark.png"
-          : "/public/favicon-light.png";
+        theme === "dark" ? "/favicon-dark.png" : "/favicon-light.png";
       if (!faviconLink.parentNode) {
         document.head.appendChild(faviconLink);
       }

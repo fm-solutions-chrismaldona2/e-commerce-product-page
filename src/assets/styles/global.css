@@ -1,6 +1,6 @@
 :root {
   /* Primary */
-  --clr-orange: #ff7d1a;
+  --clr-orange: #ff7d1b;
   --clr-pale-orange: #ffede0;
 
   /* Neutral */
@@ -29,10 +29,10 @@ body {
 }
 
 *:focus-visible {
-  box-shadow: 0 0 0 1.5px var(--clr-orange, #ff7d1a);
+  box-shadow: 0 0 0 1.5px var(--clr-orange, #ff7d1b);
 }
 
 ::selection {
-  background-color: var(--clr-orange, #ff7d1a);
+  background-color: var(--clr-orange, #ff7d1b);
   color: var(--clr-white, #fff);
 }

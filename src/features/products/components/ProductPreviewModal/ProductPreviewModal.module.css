@@ -32,7 +32,7 @@
 }
 
 .modal__closeIcon:hover > path {
-  fill: var(--clr-orange, #ff7d1a);
+  fill: var(--clr-orange, #ff7d1b);
 }
 
 .modal img {
@@ -75,5 +75,5 @@
 }
 
 .image__wrapper--carrousel:has(.image--carrousel--selected) {
-  box-shadow: 0 0 0 2px var(--clr-orange, #ff7d1a);
+  box-shadow: 0 0 0 2px var(--clr-orange, #ff7d1b);
 }
