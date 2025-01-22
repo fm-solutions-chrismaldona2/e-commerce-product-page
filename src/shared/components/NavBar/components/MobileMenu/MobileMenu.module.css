@@ -3,7 +3,7 @@
   background: var(--clr-white);
   padding-block: max(5vw, 1.5rem);
   padding-inline: max(5vw, 2rem);
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   gap: 2.5rem;

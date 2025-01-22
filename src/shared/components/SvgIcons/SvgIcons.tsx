@@ -122,3 +122,45 @@ export const DeleteIcon = ({ className, ...props }: SvgProps) => {
     </svg>
   );
 };
+
+export const PreviousIcon = ({ className, ...props }: SvgProps) => {
+  return (
+    <svg
+      width="12"
+      height="18"
+      viewBox=" 0 0 12 18"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      {...props}
+    >
+      <path
+        d="M11 1 3 9l8 8"
+        stroke="#1D2026"
+        strokeWidth="3"
+        fill="none"
+        fillRule="evenodd"
+      />
+    </svg>
+  );
+};
+
+export const NextIcon = ({ className, ...props }: SvgProps) => {
+  return (
+    <svg
+      width="13"
+      height="18"
+      viewBox="0 0 13 18"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      {...props}
+    >
+      <path
+        d="m2 1 8 8-8 8"
+        stroke="#1D2026"
+        strokeWidth="3"
+        fill="none"
+        fillRule="evenodd"
+      />
+    </svg>
+  );
+};

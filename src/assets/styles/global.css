@@ -11,6 +11,8 @@
 
   --clr-white: #ffffff;
   --clr-black: #000000;
+
+  --header-height: clamp(5rem, 15vw, 8rem);
 }
 
 html {

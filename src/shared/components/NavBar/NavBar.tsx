@@ -1,9 +1,9 @@
 import styles from "./NavBar.module.css";
 import Logo from "@shared/components/Logo/Logo";
+import CartPopover from "@features/cart/components/CartPopover/CartPopover";
 import { Link } from "react-router";
 import { navLinks } from "@shared/constants/navLinks";
 import { ToggleMobileMenu } from "./components/ToggleMobileMenu/ToggleMobileMenu";
-import { CartButton } from "@features/cart/components/CartButton/CartButton";
 import { ProfileAvatar } from "./components/ProfileAvatar/ProfileAvatar";
 
 const NavBar = () => {
@@ -31,7 +31,7 @@ const NavBar = () => {
           </nav>
         </div>
         <div className={styles.header__rightSection}>
-          <CartButton />
+          <CartPopover />
           <ProfileAvatar />
         </div>
       </div>

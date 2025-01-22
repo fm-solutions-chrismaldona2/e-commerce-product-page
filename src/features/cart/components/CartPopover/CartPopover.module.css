@@ -1,0 +1,27 @@
+.container {
+  anchor-name: --container;
+  z-index: 100;
+}
+
+.cart {
+  position: absolute;
+  position-anchor: --container;
+  top: calc(anchor(bottom) + 1rem);
+  justify-self: anchor-center;
+  margin-right: 1rem;
+  box-shadow: 0 1rem 1.75rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  overflow: clip;
+  width: min(380px, 95%);
+}
+
+@media screen and (max-width: 545px) {
+  .cart {
+    position-anchor: unset;
+    justify-self: unset;
+    margin-right: 0;
+    top: calc(var(--header-height) + 1rem);
+    left: 50%;
+    translate: -50%;
+  }
+}

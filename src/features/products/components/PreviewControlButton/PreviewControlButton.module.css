@@ -1,0 +1,45 @@
+.button {
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  transition: scale 0.35s ease;
+}
+
+.button--small {
+  padding: 0.85rem;
+}
+
+.button--normal {
+  padding: 1.1rem;
+}
+
+.button--small .button__icon {
+  height: 0.9rem;
+}
+
+.button--normal .button__icon {
+  height: 1rem;
+}
+
+.button:active {
+  scale: 0.96;
+}
+
+.button__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+}
+
+.button__icon svg {
+  height: 100%;
+}
+
+.button__icon path {
+  transition: stroke 0.5s ease;
+}
+
+.button:hover .button__icon path {
+  stroke: var(--clr-orange, #ff7d1b);
+}

@@ -13,7 +13,11 @@
 }
 
 .product > * {
-  flex: 1;
+  flex-grow: 1;
+}
+
+.product > *:first-child {
+  min-height: 380px;
 }
 
 @media screen and (max-width: 768px) {

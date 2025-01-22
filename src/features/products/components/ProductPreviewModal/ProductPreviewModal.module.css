@@ -49,7 +49,7 @@
   max-width: 80%;
   margin-inline: auto;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
   gap: min(2rem, 5vw);
 }
 
@@ -76,4 +76,25 @@
 
 .image__wrapper--carrousel:has(.image--carrousel--selected) {
   box-shadow: 0 0 0 2px var(--clr-orange, #ff7d1b);
+}
+
+.images__current {
+  position: relative;
+}
+
+.images__previousButton,
+.images__nextButton {
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+}
+
+.images__previousButton {
+  left: 0;
+  transform: translateX(-50%);
+}
+
+.images__nextButton {
+  right: 0;
+  transform: translateX(50%);
 }

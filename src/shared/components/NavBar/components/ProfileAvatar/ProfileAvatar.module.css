@@ -28,4 +28,5 @@
   height: 8vw;
   object-fit: cover;
   object-position: center;
+  aspect-ratio: 1;
 }

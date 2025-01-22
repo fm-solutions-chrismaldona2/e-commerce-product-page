@@ -28,7 +28,9 @@ const ProductPurchaseControls = ({ product }: ProductPurchaseControlsProps) => {
   };
 
   const handleAddToCart = () => {
-    addItemToCart(product, quantity);
+    if (quantity !== 0) {
+      addItemToCart(product, quantity);
+    }
   };
 
   return (

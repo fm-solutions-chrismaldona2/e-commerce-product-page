@@ -1,5 +1,5 @@
 .images__wrapper {
-  --gap: min(2rem, 5vw);
+  --gap: min(2rem, 3vw);
   display: flex;
   flex-direction: column;
   gap: var(--gap);
@@ -7,13 +7,31 @@
 
 .images__wrapper img {
   max-height: 100%;
+  width: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center top;
 }
 
-.image__selected {
-  cursor: pointer;
+.images__selected {
+  height: 100%;
+  position: relative;
   border-radius: 1rem;
+  overflow: clip;
+  cursor: pointer;
+}
+
+.images__controls {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  justify-content: space-between;
+  width: 95%;
+  display: none;
+}
+
+.image__selectedImg {
+  height: 100%;
 }
 
 .images__carrousel {
@@ -57,7 +75,11 @@
     max-height: 23rem;
   }
 
-  .image__selected {
+  .images__selected {
     border-radius: 0;
+  }
+
+  .images__controls {
+    display: flex;
   }
 }

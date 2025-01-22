@@ -2,11 +2,12 @@ import styles from "./ProductPreviewModal.module.css";
 import { useState } from "react";
 import { ProductPreviewModalProps } from "@features/products/types";
 import { motion, Variants } from "motion/react";
-import { CloseIcon } from "@/shared/components/SvgIcons/SvgIcons";
+import { CloseIcon } from "@shared/components/SvgIcons/SvgIcons";
 import Backdrop from "@shared/components/Backdrop/Backdrop";
 import { useSliderKeys } from "@features/products/hooks/useSliderKeys";
 import { useModalkeys } from "@/shared/hooks/useModalKeys";
 import defaultThumbnail from "@assets/images/products/default_product_thumbnail.png";
+import PreviewControlButton from "@features/products/components/PreviewControlButton/PreviewControlButton";
 
 const ProductPreviewModal = ({
   name = "Product",
@@ -52,13 +53,29 @@ const ProductPreviewModal = ({
           <CloseIcon className={styles.modal__closeIcon} />
         </button>
 
-        <img
-          src={images[currentImage].url}
-          alt={`${name} Preview`}
-          className={styles.image__selected}
-          width={494}
-          height={494}
-        />
+        <div className={styles.images__current}>
+          <div className={styles.images__previousButton}>
+            <PreviewControlButton
+              type="previous"
+              onClick={previousImage}
+              size="normal"
+            />
+          </div>
+          <img
+            src={images[currentImage].url}
+            alt={`${name} Preview`}
+            className={styles.image__selected}
+            width={494}
+            height={494}
+          />
+          <div className={styles.images__nextButton}>
+            <PreviewControlButton
+              type="next"
+              onClick={nextImage}
+              size="normal"
+            />
+          </div>
+        </div>
 
         <div className={styles.images__carrousel}>
           {images.map(({ url, thumbnailUrl }, index) => {

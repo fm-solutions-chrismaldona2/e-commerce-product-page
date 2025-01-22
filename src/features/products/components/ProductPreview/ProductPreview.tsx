@@ -1,14 +1,17 @@
 import styles from "./ProductPreview.module.css";
 import { useState } from "react";
 import { ProductPreviewProps } from "@features/products/types";
-import ProductPreviewModal from "../ProductPreviewModal/ProductPreviewModal";
+import ProductPreviewModal from "@features/products/components/ProductPreviewModal/ProductPreviewModal";
 import { AnimatePresence } from "motion/react";
 import { useSliderKeys } from "@features/products/hooks/useSliderKeys";
 import defaultThumbnail from "@assets/images/products/default_product_thumbnail.png";
+import PreviewControlButton from "@features/products/components/PreviewControlButton/PreviewControlButton";
+import useMediaQuery from "@shared/hooks/useMediaQuery";
 
 const ProductPreview = ({ name = "Product", images }: ProductPreviewProps) => {
   const [currentImage, setCurrentImage] = useState<number>(0);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const isMobile = useMediaQuery("(max-width: 768px)");
 
   const toggleModal = () => {
     setIsModalOpen((prev) => !prev);
@@ -45,16 +48,30 @@ const ProductPreview = ({ name = "Product", images }: ProductPreviewProps) => {
       </AnimatePresence>
 
       <div className={styles.images__wrapper}>
-        <img
-          src={images[currentImage].url}
-          alt={`${name} Preview`}
-          className={styles.image__selected}
-          width={494}
-          height={494}
-          role="button"
-          aria-label="Open preview modal"
-          onClick={toggleModal}
-        />
+        <div className={styles.images__selected}>
+          <img
+            src={images[currentImage].url}
+            alt={`${name} Preview`}
+            className={styles.image__selectedImg}
+            width={494}
+            height={494}
+            role="button"
+            aria-label="Open preview modal"
+            onClick={!isMobile ? toggleModal : undefined}
+          />
+          <div className={styles.images__controls}>
+            <PreviewControlButton
+              type="previous"
+              onClick={previousImage}
+              size="small"
+            />
+            <PreviewControlButton
+              type="next"
+              onClick={nextImage}
+              size="small"
+            />
+          </div>
+        </div>
 
         <div className={styles.images__carrousel}>
           {images.map(({ url, thumbnailUrl }, index) => {
