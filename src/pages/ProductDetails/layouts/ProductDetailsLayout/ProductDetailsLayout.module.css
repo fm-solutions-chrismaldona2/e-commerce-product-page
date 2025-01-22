@@ -1,6 +1,6 @@
 .layout {
   height: 100%;
-  width: min(1000px, 90%);
+  width: min(62.5rem, 90%);
   padding-block: 2rem;
   margin-inline: auto;
   display: grid;
@@ -17,10 +17,10 @@
 }
 
 .product > *:first-child {
-  min-height: 380px;
+  min-height: 23.75rem;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 48rem) {
   .layout {
     width: 100%;
     padding-block: 0 3rem;

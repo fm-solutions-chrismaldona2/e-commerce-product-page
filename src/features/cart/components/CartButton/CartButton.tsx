@@ -1,7 +1,7 @@
 import styles from "./CartButton.module.css";
 import { CartIcon } from "@shared/components/SvgIcons/SvgIcons";
 import { useCart } from "@features/cart/hooks/useCart";
-import { motion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 
 interface CartButtonProps {
   onClick: () => void;
@@ -19,21 +19,24 @@ const CartButton = ({ onClick }: CartButtonProps) => {
     >
       <CartIcon className={styles.cartButton__icon} />
 
-      {cartLength > 0 && (
-        <motion.span
-          className={styles.cartButton__count}
-          key={cartLength}
-          initial={{ scale: 1 }}
-          animate={{ scale: [1.3, 1] }}
-          transition={{
-            type: "spring",
-            stiffness: 400,
-            damping: 20,
-          }}
-        >
-          {cartLength}
-        </motion.span>
-      )}
+      <AnimatePresence>
+        {cartLength > 0 && (
+          <motion.span
+            className={styles.cartButton__count}
+            key={cartLength}
+            initial={{ scale: 0 }}
+            animate={{ scale: [1.3, 1] }}
+            exit={{ scale: 0 }}
+            transition={{
+              type: "spring",
+              stiffness: 400,
+              damping: 20,
+            }}
+          >
+            {cartLength}
+          </motion.span>
+        )}
+      </AnimatePresence>
     </button>
   );
 };

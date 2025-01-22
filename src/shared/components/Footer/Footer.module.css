@@ -1,0 +1,21 @@
+.footer {
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 0.85rem;
+  color: var(--clr-very-dark-blue, #1d2025);
+
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.footer_link {
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--clr-orange, #ff7d1b);
+  transition: color 0.4s ease;
+}
+
+.footer_link:hover {
+  color: hsl(from var(--clr-orange, #ff7d1b) h s l / 0.7);
+}

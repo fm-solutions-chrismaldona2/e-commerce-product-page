@@ -18,11 +18,15 @@
   justify-content: center;
   cursor: pointer;
   padding: 0.6rem;
-  transition: scale 0.2s ease-in-out, opacity 0.35s ease;
+  transition: scale 0.2s ease-in-out;
 }
 
-.picker__button:hover {
-  opacity: 0.5;
+.picker__button path {
+  fill: var(--clr-orange, #ff7d1b);
+  transition: fill 0.35s ease-in-out;
+}
+.picker__button:hover path {
+  fill: hsl(from var(--clr-orange, #ff7d1b) h s l / 0.6);
 }
 
 .picker__button:active {

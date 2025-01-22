@@ -1,7 +1,7 @@
 .header__innerWrapper {
   margin-inline: auto;
   height: var(--header-height, clamp(5rem, 15vw, 8rem));
-  width: min(1080px, 90%);
+  width: min(67.5rem, 90%);
 
   border-bottom: solid 1px #d9d9d9;
 
@@ -20,7 +20,7 @@
 
 .logo__container {
   display: block;
-  flex-shrink: 1;
+  flex-shrink: 0.5;
 }
 
 .nav {
@@ -46,13 +46,13 @@
   display: flex;
   align-items: center;
   font-size: 1rem;
-  color: var(--clr-black, #000);
-  opacity: 0.5;
-  transition: opacity 0.45s ease;
+  color: hsl(from var(--clr-black, #000) h s l / 0.55);
+
+  transition: color 0.45s ease;
 }
 
 .nav__link:hover {
-  opacity: 1;
+  color: var(--clr-black, #000);
 }
 
 .nav__link::after {
@@ -86,7 +86,7 @@
   flex-shrink: 0;
 }
 
-@media screen and (max-width: 925px) {
+@media screen and (max-width: 57.81rem) {
   .nav {
     display: none;
   }

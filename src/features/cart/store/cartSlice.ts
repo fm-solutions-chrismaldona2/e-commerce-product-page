@@ -7,7 +7,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { CartItem } from "@features/cart/types";
 
-interface CartState {
+export interface CartState {
   items: CartItem[];
 }
 
@@ -23,7 +23,6 @@ const cartSlice = createSlice({
       const existingItemIndex = state.items.findIndex(
         (item) => item.id === action.payload.id
       );
-
       if (existingItemIndex !== -1) {
         const existingItem = state.items[existingItemIndex];
         existingItem.quantity += action.payload.quantity;

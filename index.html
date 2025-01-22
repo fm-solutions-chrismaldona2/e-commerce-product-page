@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sneakers</title>
     <script type="module">
+      // if 'anchorName' css property is not supported by the browser, dynamically load the 'css-anchor-positioning' polyfill to improve compatibility.
       if (!("anchorName" in document.documentElement.style)) {
         import("https://unpkg.com/@oddbird/css-anchor-positioning");
       }
@@ -29,6 +30,15 @@
       as="font"
       type="font/ttf"
       crossorigin="anonymous"
+    />
+
+    <meta
+      name="description"
+      content="Sneakers E-Commerce Product Page. A solution to the Frontend Mentor challenge built with React."
+    />
+    <meta
+      name="keywords"
+      content="ecommerce, e-commerce, frontendMentor, frontend mentor, frontendmentor challenge, challenge, react application, sneakers, product page, redux, framer motion, motion, css, react, typescript, redux-toolkit, redux-persist, redux toolkit, redux persist, github"
     />
   </head>
   <body>

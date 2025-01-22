@@ -31,11 +31,11 @@
   z-index: -1;
   inset: 0;
   background-color: var(--clr-orange, #ff7d1b);
-  transition: opacity 0.4s ease;
+  transition: background-color 0.4s ease;
 }
 
 .button:hover.button::after {
-  opacity: 0.6;
+  background-color: hsl(from var(--clr-orange, #ff7d1b) h s l / 0.6);
 }
 
 .button svg {

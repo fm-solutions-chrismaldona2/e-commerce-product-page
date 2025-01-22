@@ -11,7 +11,7 @@ import useMediaQuery from "@shared/hooks/useMediaQuery";
 const ProductPreview = ({ name = "Product", images }: ProductPreviewProps) => {
   const [currentImage, setCurrentImage] = useState<number>(0);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const isMobile = useMediaQuery("(max-width: 768px)");
+  const isMobile = useMediaQuery("(max-width: 48rem)");
 
   const toggleModal = () => {
     setIsModalOpen((prev) => !prev);
@@ -37,7 +37,7 @@ const ProductPreview = ({ name = "Product", images }: ProductPreviewProps) => {
   return (
     <>
       <AnimatePresence>
-        {isModalOpen && (
+        {isModalOpen && !isMobile && (
           <ProductPreviewModal
             name={name}
             images={images}

@@ -68,7 +68,7 @@
   text-decoration: line-through;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 48rem) {
   .product__priceWrapper {
     flex-direction: row;
     align-items: center;

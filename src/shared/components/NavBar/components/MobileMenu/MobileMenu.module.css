@@ -23,11 +23,11 @@
   font-size: 1.5rem;
   color: var(--clr-black, #000);
   font-weight: 700;
-  transition: opacity 0.45s ease;
+  transition: color 0.45s ease;
 }
 
 .menu__link:hover {
-  opacity: 0.5;
+  color: hsl(from var(--clr-black, #000) h s l / 0.55);
 }
 
 .menuButton {

@@ -2,11 +2,10 @@ import CartButton from "@features/cart/components/CartButton/CartButton";
 import Cart from "@features/cart/components/Cart/Cart";
 import styles from "./CartPopover.module.css";
 import { motion, AnimatePresence, Variants } from "motion/react";
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 const CartPopover = () => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
-  const cartRef = useRef<HTMLDivElement>(null);
   const toggleCart = () => {
     setIsVisible((prev) => !prev);
   };
@@ -18,7 +17,6 @@ const CartPopover = () => {
         {isVisible && (
           <motion.div
             className={styles.cart}
-            ref={cartRef}
             variants={cart}
             initial="hidden"
             animate="visible"

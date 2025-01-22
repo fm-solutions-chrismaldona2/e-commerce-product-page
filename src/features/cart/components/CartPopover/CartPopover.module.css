@@ -12,10 +12,10 @@
   box-shadow: 0 1rem 1.75rem rgba(0, 0, 0, 0.1);
   border-radius: 0.5rem;
   overflow: clip;
-  width: min(380px, 95%);
+  width: min(23.75rem, 95%);
 }
 
-@media screen and (max-width: 545px) {
+@media screen and (max-width: 34.1rem) {
   .cart {
     position-anchor: unset;
     justify-self: unset;
