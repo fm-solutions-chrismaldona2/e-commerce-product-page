@@ -97,6 +97,8 @@ const ProductPreviewModal = ({
                   onError={(e) => {
                     e.currentTarget.src = defaultThumbnail;
                   }}
+                  width={76}
+                  height={76}
                   className={`${styles["image--carrousel"]} ${
                     currentImage === index &&
                     styles["image--carrousel--selected"]

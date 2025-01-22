@@ -15,7 +15,11 @@ const ProductQuantityPicker = ({
 }: ProductQuantityPickerProps) => {
   return (
     <div className={styles.picker}>
-      <button className={styles.picker__button} onClick={onDecrement}>
+      <button
+        className={styles.picker__button}
+        onClick={onDecrement}
+        aria-label="Decrement quantity"
+      >
         <MinusIcon className={styles.picker__buttonIcon} />
       </button>
 
@@ -34,7 +38,11 @@ const ProductQuantityPicker = ({
         {quantity}
       </motion.span>
 
-      <button className={styles.picker__button} onClick={onIncrement}>
+      <button
+        className={styles.picker__button}
+        onClick={onIncrement}
+        aria-label="Increment quantity"
+      >
         <PlusIcon className={styles.picker__buttonIcon} />
       </button>
     </div>

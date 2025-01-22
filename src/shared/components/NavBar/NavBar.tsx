@@ -15,7 +15,11 @@ const NavBar = () => {
             <ToggleMobileMenu />
           </div>
 
-          <Link to="/" className={styles.logo__container}>
+          <Link
+            to="/"
+            className={styles.logo__container}
+            aria-label="Go to homepage"
+          >
             <Logo className={styles.logo} />
           </Link>
           <nav className={styles.nav}>

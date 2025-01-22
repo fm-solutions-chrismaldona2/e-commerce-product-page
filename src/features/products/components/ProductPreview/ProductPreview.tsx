@@ -86,6 +86,8 @@ const ProductPreview = ({ name = "Product", images }: ProductPreviewProps) => {
                     currentImage === index &&
                     styles["image--carrousel--selected"]
                   }`}
+                  width={84}
+                  height={84}
                 />
               </div>
             );
