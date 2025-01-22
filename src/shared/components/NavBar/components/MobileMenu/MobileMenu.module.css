@@ -3,10 +3,19 @@
   background: var(--clr-white);
   padding-block: max(5vw, 1.5rem);
   padding-inline: max(5vw, 2rem);
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
+  overflow: auto;
+}
+
+.menu::-webkit-scrollbar {
+  width: 10px;
+}
+
+.menu::-webkit-scrollbar-thumb {
+  background-color: var(--clr-orange, #ff7d1b);
 }
 
 .menu__linkList {
