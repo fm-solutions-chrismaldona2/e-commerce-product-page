@@ -1,6 +1,6 @@
-# E-Commerce Product Page
+# E-commerce Product Page
 
-A React-based e-commerce product page created for the [Fylo Landing Page challenge](https://www.frontendmentor.io/challenges/ecommerce-product-page-UPsZ9MJp6) on Frontend Mentor.
+A React-based e-commerce product page created for the [E-commerce product page challenge](https://www.frontendmentor.io/challenges/ecommerce-product-page-UPsZ9MJp6) on Frontend Mentor.
 
 ## Live Site
 
