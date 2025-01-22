@@ -1,7 +1,7 @@
 import styles from "./CartItem.module.css";
 import { useCart } from "@features/cart/hooks/useCart";
 import { CartItem as CartItemType } from "@features/cart/types";
-import defaultThumbnail from "@assets/images/products/default_product_thumbnail.png";
+import defaultThumbnail from "@assets/images/default_product_thumbnail.png";
 import { DeleteIcon } from "@shared/components/SvgIcons/SvgIcons";
 import { formatPriceToString } from "@/shared/utils/formatPriceToString";
 import { motion, Variants } from "motion/react";
@@ -12,7 +12,7 @@ interface CartItemProps {
 
 const CartItem = ({ data }: CartItemProps) => {
   const { id, name, price, quantity, totalPrice } = data;
-  const thumbnail = data.images[0].thumbnailUrl;
+  const { url, thumbnailUrl } = data.images[0];
 
   const { removeItemFromCart } = useCart();
   const handleRemove = () => {
@@ -28,7 +28,10 @@ const CartItem = ({ data }: CartItemProps) => {
     >
       <div className={styles.item__thumbnailContainer}>
         <img
-          src={thumbnail || defaultThumbnail}
+          src={thumbnailUrl || url}
+          onError={(e) => {
+            e.currentTarget.src = defaultThumbnail;
+          }}
           alt={`${name} thumbnail image.`}
           className={styles.item__thumbnail}
         />

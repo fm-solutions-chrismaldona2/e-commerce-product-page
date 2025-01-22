@@ -6,7 +6,7 @@ import { CloseIcon } from "@shared/components/SvgIcons/SvgIcons";
 import Backdrop from "@shared/components/Backdrop/Backdrop";
 import { useSliderKeys } from "@features/products/hooks/useSliderKeys";
 import { useModalkeys } from "@/shared/hooks/useModalKeys";
-import defaultThumbnail from "@assets/images/products/default_product_thumbnail.png";
+import defaultThumbnail from "@assets/images/default_product_thumbnail.png";
 import PreviewControlButton from "@features/products/components/PreviewControlButton/PreviewControlButton";
 
 const ProductPreviewModal = ({
@@ -64,6 +64,9 @@ const ProductPreviewModal = ({
           <img
             src={images[currentImage].url}
             alt={`${name} Preview`}
+            onError={(e) => {
+              e.currentTarget.src = defaultThumbnail;
+            }}
             className={styles.image__selected}
             width={494}
             height={494}
@@ -89,8 +92,11 @@ const ProductPreviewModal = ({
                 aria-label="Change preview image"
               >
                 <img
-                  src={thumbnailUrl || url || defaultThumbnail}
+                  src={thumbnailUrl || url}
                   alt={`${name} Preview #${index}`}
+                  onError={(e) => {
+                    e.currentTarget.src = defaultThumbnail;
+                  }}
                   className={`${styles["image--carrousel"]} ${
                     currentImage === index &&
                     styles["image--carrousel--selected"]

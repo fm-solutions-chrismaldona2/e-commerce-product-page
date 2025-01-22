@@ -11,24 +11,24 @@ export const products: Product[] = [
     discountPercentage: 50,
     images: [
       {
-        url: "/src/assets/images/products/product-1/image-product-1.jpg",
+        url: "/images/products/product-1/image-product-1.jpg",
         thumbnailUrl:
-          "/src/assets/images/products/product-1/image-product-1-thumbnail.jpg",
+          "/images/products/product-1/image-product-1-thumbnail.jpg",
       },
       {
-        url: "/src/assets/images/products/product-1/image-product-2.jpg",
+        url: "/images/products/product-1/image-product-2.jpg",
         thumbnailUrl:
-          "/src/assets/images/products/product-1/image-product-2-thumbnail.jpg",
+          "/images/products/product-1/image-product-2-thumbnail.jpg",
       },
       {
-        url: "/src/assets/images/products/product-1/image-product-3.jpg",
+        url: "/images/products/product-1/image-product-3.jpg",
         thumbnailUrl:
-          "/src/assets/images/products/product-1/image-product-3-thumbnail.jpg",
+          "/images/products/product-1/image-product-3-thumbnail.jpg",
       },
       {
-        url: "/src/assets/images/products/product-1/image-product-4.jpg",
+        url: "/images/products/product-1/image-product-4.jpg",
         thumbnailUrl:
-          "/src/assets/images/products/product-1/image-product-4-thumbnail.jpg",
+          "/images/products/product-1/image-product-4-thumbnail.jpg",
       },
     ],
   },

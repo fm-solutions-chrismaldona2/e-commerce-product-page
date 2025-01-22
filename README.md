@@ -4,7 +4,7 @@ A React-based e-commerce product page created for the [Fylo Landing Page challen
 
 ## Live Site
 
-[Netlify Deploy]()
+[Netlify Deploy](https://sneakers-onlineshop.netlify.app/)
 
 ## Technologies Used
 

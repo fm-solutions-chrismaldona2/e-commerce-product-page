@@ -1,6 +1,6 @@
 .layout {
   height: 100%;
-  width: min(62.5rem, 90%);
+  width: min(64rem, 90%);
   padding-block: 2rem;
   margin-inline: auto;
   display: grid;
@@ -9,15 +9,16 @@
 .product {
   display: flex;
   align-items: center;
-  gap: clamp(3rem, 7vw, 6.5rem);
+  gap: clamp(3rem, 10vw, 7rem);
 }
 
 .product > * {
-  flex-grow: 1;
+  flex: 1;
 }
 
 .product > *:first-child {
-  min-height: 23.75rem;
+  width: 100%;
+  max-width: 27rem;
 }
 
 @media screen and (max-width: 48rem) {
@@ -32,7 +33,11 @@
     align-items: unset;
   }
 
+  .product > *:first-child {
+    max-width: unset;
+  }
+
   .product > *:last-child {
-    padding-inline: 2rem;
+    padding-inline: 1.5rem;
   }
 }

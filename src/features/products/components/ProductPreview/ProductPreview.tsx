@@ -4,7 +4,7 @@ import { ProductPreviewProps } from "@features/products/types";
 import ProductPreviewModal from "@features/products/components/ProductPreviewModal/ProductPreviewModal";
 import { AnimatePresence } from "motion/react";
 import { useSliderKeys } from "@features/products/hooks/useSliderKeys";
-import defaultThumbnail from "@assets/images/products/default_product_thumbnail.png";
+import defaultThumbnail from "@assets/images/default_product_thumbnail.png";
 import PreviewControlButton from "@features/products/components/PreviewControlButton/PreviewControlButton";
 import useMediaQuery from "@shared/hooks/useMediaQuery";
 
@@ -36,22 +36,14 @@ const ProductPreview = ({ name = "Product", images }: ProductPreviewProps) => {
 
   return (
     <>
-      <AnimatePresence>
-        {isModalOpen && !isMobile && (
-          <ProductPreviewModal
-            name={name}
-            images={images}
-            currentImageIndex={currentImage}
-            onClose={toggleModal}
-          />
-        )}
-      </AnimatePresence>
-
       <div className={styles.images__wrapper}>
         <div className={styles.images__selected}>
           <img
             src={images[currentImage].url}
             alt={`${name} Preview`}
+            onError={(e) => {
+              e.currentTarget.src = defaultThumbnail;
+            }}
             className={styles.image__selectedImg}
             width={494}
             height={494}
@@ -85,8 +77,11 @@ const ProductPreview = ({ name = "Product", images }: ProductPreviewProps) => {
                 aria-label="Change preview image"
               >
                 <img
-                  src={thumbnailUrl || url || defaultThumbnail}
+                  src={thumbnailUrl || url}
                   alt={`${name} Preview #${index}`}
+                  onError={(e) => {
+                    e.currentTarget.src = defaultThumbnail;
+                  }}
                   className={`${styles["image--carrousel"]} ${
                     currentImage === index &&
                     styles["image--carrousel--selected"]
@@ -97,6 +92,17 @@ const ProductPreview = ({ name = "Product", images }: ProductPreviewProps) => {
           })}
         </div>
       </div>
+
+      <AnimatePresence>
+        {isModalOpen && !isMobile && (
+          <ProductPreviewModal
+            name={name}
+            images={images}
+            currentImageIndex={currentImage}
+            onClose={toggleModal}
+          />
+        )}
+      </AnimatePresence>
     </>
   );
 };
